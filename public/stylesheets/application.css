@@ -261,6 +261,11 @@ textarea
   height: 150px;
 }
 
+/* HONEYPOT_FIELD_NAME input */
+.rtxt_candybar {
+  display: none;
+}
+
 .alt, .container_alt
 {
   background-color: #fafafa;

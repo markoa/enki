@@ -24,6 +24,9 @@ Rails::Initializer.run do |config|
 
   config.active_record.timestamped_migrations = false
 
+  HONEYPOT_FIELD_NAME = 'rtxt_candybar'
+  config.middleware.use "Rack::Honeypot", HONEYPOT_FIELD_NAME
+
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
