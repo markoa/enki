@@ -21,8 +21,9 @@
     </div>
 
     <div id="navigation">
-      <h2>Pages</h2>
+      <h2>Find your way</h2>
       <ul>
+        <li><%= link_to("Root", root_path) %></li>
         <% page_links_for_navigation.each do |link| -%>
           <li><%= link_to(h(link.name), link.url) %></li>
         <% end -%>
