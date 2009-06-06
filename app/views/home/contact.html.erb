@@ -1,0 +1,53 @@
+<% content_for :head do %>
+  <title> Contact </title>
+
+<%= javascript_include_tag 'prototype' %>
+<%= javascript_include_tag 'application' %>
+
+<script type="text/javascript">
+  function allowSend() {
+    var email = $('email').getValue();
+    var message = $('message').getValue();
+
+    $('submit').disabled = email.blank() ||
+      !isValidEmail(email) || message.blank();
+  }
+
+  document.observe('dom:loaded', function() {
+    var form = $('contactForm');
+    form.focusFirstElement();
+    allowSend();
+
+    new Form.Observer('contactForm', 0.5, function() {
+      allowSend();
+    });
+});
+</script>
+
+<% end %>
+
+<h2>Contact</h2>
+
+<p>
+If you’re interested in hiring rendered :text, use the form below or email us at
+<%= mail_to "devs@renderedtext.com", "devs@renderedtext.com", :encode => "hex" %>.
+</p>
+
+<% form_tag '/send_mail', :id => 'contactForm' do %>
+  <p>
+    <%= label_tag 'email' %> <br />
+    <%= text_field_tag 'email', '', :size => 32 %>
+  </p>
+
+  <p>
+    <%= label_tag 'subject' %> <br />
+    <%= text_field_tag 'subject', '', :size => 32 %>
+  </p>
+
+  <p>
+    <%= label_tag 'message' %> <br />
+    <%= text_area_tag 'message', '', :size => '32x8' %>
+  </p>
+
+  <%= submit_tag "Send", :id => 'submit' %>
+<% end %>

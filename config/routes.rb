@@ -17,15 +17,23 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/admin/api', :controller => 'admin/api', :action => 'index'
   map.archives '/archives', :controller => 'archives', :action => 'index'
 
-  map.root :controller => 'posts', :action => 'index'
+  map.root :controller => 'home', :action => 'index'
+  map.with_options :controller => 'home' do |home|
+    home.team     'team', :action => 'team'
+    home.services 'services', :action => 'services'
+    home.work     'work', :action => 'work'
+    home.contact  'contact', :action => 'contact'
+  end
+
   map.resources :posts
+  map.blog '/blog', :controller => 'posts', :action => 'index'
 
   map.resources :pages
 
-  map.connect ':year/:month/:day/:slug/comments', :controller => 'comments', :action => 'index'
-  map.connect ':year/:month/:day/:slug/comments/new', :controller => 'comments', :action => 'new'
-  map.connect ':year/:month/:day/:slug/comments.:format', :controller => 'comments', :action => 'index'
-  map.connect ':year/:month/:day/:slug', :controller => 'posts', :action => 'show', :requirements => { :year => /\d+/ }
+  map.connect '/blog/:year/:month/:day/:slug/comments', :controller => 'comments', :action => 'index'
+  map.connect '/blog/:year/:month/:day/:slug/comments/new', :controller => 'comments', :action => 'new'
+  map.connect '/blog/:year/:month/:day/:slug/comments.:format', :controller => 'comments', :action => 'index'
+  map.connect '/blog/:year/:month/:day/:slug', :controller => 'posts', :action => 'show', :requirements => { :year => /\d+/ }
   map.posts_with_tag ':tag', :controller => 'posts', :action => 'index'
   map.formatted_posts_with_tag ':tag.:format', :controller => 'posts', :action => 'index'
 end

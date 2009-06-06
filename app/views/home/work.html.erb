@@ -1,0 +1,31 @@
+<% content_for :head do %>
+  <title> Work </title>
+<% end %>
+
+<h2>Work</h2>
+
+<div class="work">
+  <h3>Plakatt</h3>
+
+  <p>
+  <%= link_to "Plakatt", "http://plakatt.com", :target => "_blank" %>
+  is a social platform for publishing and discovering
+  events and locations which we've built from scratch for fun and eventually
+  profit.
+  </p>
+
+  <%= link_to image_tag("work-plakatt.png", :alt => "Plakatt screenshots"), "http://plakatt.com", :target => "_blank" %>
+</div>
+
+<div class="work">
+  <h3>Reservation Genie</h3>
+
+  <p>
+  <%= link_to "Reservation Genie", "http://www.reservationgenie.com", :target => "_blank" %>
+  is a project we were asked to take over and continue developing.
+  It's an application for reservation inventory management, used by
+  concierges and restaurants to automate the reservation process in real time.
+  </p>
+
+  <%= link_to image_tag("work-rg.png", :alt => "Reservation Genie screenshots"), "http://www.reservationgenie.com", :target => "_blank" %>
+</div>
