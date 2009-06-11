@@ -29,8 +29,10 @@
 <h2>Contact</h2>
 
 <p>
-If you’re interested in hiring rendered :text, use the form below or email us at
-<%= mail_to "devs@renderedtext.com", "devs@renderedtext.com", :encode => "hex" %>.
+  If you’re interested in hiring Rendered Text,
+  use the form below or
+  <%= mail_to "devs@renderedtext.com", "email us", :encode => "hex", :class => "email" %>
+  from your preferred email client.
 </p>
 
 <% form_tag '/send_mail', :id => 'contactForm' do %>
@@ -51,3 +53,23 @@ If you’re interested in hiring rendered :text, use the form below or email us 
 
   <%= submit_tag "Send", :id => 'submit' %>
 <% end %>
+
+<h3>Office</h3>
+
+<p>
+  Feel free to drop by and say hi. We always have some candies around.
+</p>
+
+<div class="vcard">
+  <div class="adr">
+    <div class="org fn">
+      <a class="url" href="http://renderedtext.com">
+        <span class="organization-name">Rendered Text</span>
+      </a>
+    </div>
+    <div class="street-address">Žarka Zrenjanina 4</div>
+    <span class="locality">Novi Sad</span>,
+    <span class="postal-code">21000</span>
+    <div class="country-name">Serbia</div>
+  </div>
+</div>
