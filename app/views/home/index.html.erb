@@ -12,8 +12,12 @@
 
 <p>
 We specialize in building applications with the
-<%= link_to "Ruby on Rails", "http://rubyonrails.org", :target => '_blank' %>
+<%= link_to "Ruby on Rails", "http://rubyonrails.org", :rel => "external" %>
 framework and work close with our clients to deliver high quality software
 through short iterations.
 <%= link_to "Learn more", "/services" %>.
+</p>
+
+<p>
+  Our latest blog post is <%= link_to(@post.title, @post) %>.
 </p>

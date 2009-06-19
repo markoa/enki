@@ -39,5 +39,5 @@ a img { border: none; }
 
 /* Footer */
 #footer { margin-top: 50px; padding:12px 0; margin:0 auto; width:674px; }
-#footer .info { float:left; }
+#footer .info { float:left; font-size: 14px; }
 #footer .rails { float:right; }

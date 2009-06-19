@@ -1,39 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
-<head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Language" content="en-us" />
-  <%= yield :head %>
-  <%= stylesheet_link_tag "rt", :media => "all" %>
-</head>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC
+    "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN"
+    "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg-flat.dtd">
 
-<body>
-<div id="header">
-<h1><a href="/">rendered <span style="color: #cc0000;">:text</span></a></h1>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <%= yield :head %>
+    <%= stylesheet_link_tag "rt", :media => "all" %>
+  </head>
 
-  <ul id="navigation">
-    <%= tab_link_to "Contact", contact_path %>
-    <%= tab_link_to "Blog", blog_path %>
-    <%= tab_link_to "Work", work_path %>
-    <%= tab_link_to "Services", services_path %>
-    <%= tab_link_to "Team", team_path %>
-  </ul>
+  <body>
+    <div id="header">
+      <h1>
+        <a href="/">rendered <span style="color: #cc0000;">:text</span></a>
+      </h1>
 
-</div>
+      <ul id="navigation">
+        <%= tab_link_to "Contact", contact_path %>
+        <%= tab_link_to "Blog", blog_path %>
+        <%= tab_link_to "Work", work_path %>
+        <%= tab_link_to "Services", services_path %>
+        <%= tab_link_to "Team", team_path %>
+      </ul>
+    </div>
 
-<div id="content">
-  <%= yield %>
-</div>
+    <div id="content">
+      <%= yield %>
+    </div>
 
-<div id="footer">
-  <div class="info">
-    &copy; 2009 rendered :text
-  </div>
-  <div class="rails">
-    <%= image_tag "rails.png" %>
-  </div>
-  <%= render :partial => 'layouts/analytics' %>
-</div>
+    <div id="footer">
+      <div class="info">
+        &copy; 2009 Rendered Text
+      </div>
+      <div class="rails">
+        <%= image_tag "rails.png" %>
+      </div>
+      <%= render :partial => 'layouts/analytics' %>
+    </div>
 
-</body>
+  </body>
 </html>
