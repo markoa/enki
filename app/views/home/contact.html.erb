@@ -29,10 +29,11 @@
 <h2>Contact</h2>
 
 <p>
-  If you’re interested in hiring Rendered Text,
-  use the form below or
+  If you'd like to get in touch with Rendered Text,
+  use the form below,
   <%= mail_to "devs@renderedtext.com", "email us", :encode => "hex", :class => "email" %>
-  from your preferred email client.
+  from your preferred email client,
+  or find us in our <%= link_to "office", "#office" %>.
 </p>
 
 <% form_tag '/send_mail', :id => 'contactForm' do %>
@@ -54,7 +55,7 @@
   <%= submit_tag "Send", :id => 'submit' %>
 <% end %>
 
-<h3>Office</h3>
+<h3 id="office">Office</h3>
 
 <p>
   Feel free to drop by and say hi. We always have some candies around.
