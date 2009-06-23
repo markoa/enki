@@ -110,6 +110,11 @@ img
   /*border: solid 1px black;*/
 }
 
+a img
+{
+  border: none;
+}
+
 /* Two columns */
 #navigation 
 {
