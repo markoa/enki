@@ -178,7 +178,7 @@ form input,
 form select,
 form textarea,
 form button {
-  font: 8pt "lucida grande", "lucida sans unicode", "lucida", sans-serif;
+  font: 10pt "lucida grande", "lucida sans unicode", "lucida", sans-serif;
 }
 
 #post_body,
