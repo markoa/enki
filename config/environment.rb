@@ -24,7 +24,7 @@ Rails::Initializer.run do |config|
 
   config.active_record.timestamped_migrations = false
 
-  HONEYPOT_FIELD_NAME = 'rtxt_candybar'
+  HONEYPOT_FIELD_NAME = 'comment_website'
   config.middleware.use "Rack::Honeypot", HONEYPOT_FIELD_NAME
 
   # Only load the plugins named here, in the order given (default is alphabetical).
